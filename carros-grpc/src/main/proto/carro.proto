@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.zupacademy";
+option java_outer_classname = "CarroGrpcProto";
+
+package carro;
+
+service CarroGrpcService {
+    rpc CreateCarro (CarroRequest) returns (CarroResponse);
+}
+
+message CarroRequest {
+    string placa = 1;
+    string modelo = 2;
+}
+
+message CarroResponse {
+    string id = 1;
+    string placa = 2;
+    string modelo = 3;
+}
